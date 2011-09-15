@@ -10,7 +10,19 @@ $ pyrus.phar install -p Acme_Pyrus_Git-0.1.0.tgz
 
 SAMPLE
 ==================
-packaging from git
+
+install from remote (require package.xml)
+<pre>
+$ pyrus.phar install-git -g git://github.com/diggin/Diggin_Http_Charset.git
+</pre>
+
+
+local packaging from remote
 <pre>
 $ pyrus.phar package-git -g git://github.com/diggin/Diggin_Http_Charset.git
+</pre>
+
+local copy and paste to php_dir (no-require package.xml)
+<pre>
+$ pyrus.phar copy-git -g git://github.com/diggin/Diggin_Http_Charset.git
 </pre>
