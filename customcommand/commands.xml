@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<commands version="2.0" xmlns="http://pear2.php.net/dtd/customcommand-2.0">
+ <command>
+  <name>package-git</name>
+  <class>Acme\Pyrus\Git\CLI</class>
+  <function>package</function>
+  <autoloadpath/>
+  <summary>fetch remote git, packaging</summary>
+  <shortcut />
+  <options>
+   <option>
+    <name>gitrepo</name>
+    <shortopt>g</shortopt>
+    <type><string/></type>
+    <doc>git repository</doc>
+   </option>
+  </options>
+  <arguments>
+  </arguments>
+  <doc>
+   undocumented yet.
+  </doc>
+ </command>
+ <command>
+  <name>copy-git</name>
+  <class>Acme\Pyrus\Git\CLI</class>
+  <function>copy</function>
+  <autoloadpath/>
+  <summary>fetch remote git, copy</summary>
+  <shortcut />
+  <options>
+   <option>
+    <name>gitrepo</name>
+    <shortopt>g</shortopt>
+    <type><string/></type>
+    <doc>git repository</doc>
+   </option>
+  </options>
+  <arguments>
+  </arguments>
+  <doc>
+   undocumented yet.
+  </doc>
+ </command>
+</commands>
