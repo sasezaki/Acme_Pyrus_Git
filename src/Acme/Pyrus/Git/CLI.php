@@ -22,7 +22,7 @@
  */
 namespace Acme\Pyrus\Git;
 use PEAR2\Pyrus\Config;
-use PEAR2\Pyrus\PackageFile;
+//use PEAR2\Pyrus\PackageFile;
 use PEAR2\Pyrus\Filesystem;
 use PEAR2\Pyrus\Developer\PackageFile\Commands as PackageFileCommands;
 use VersionControl_Git as Git;
@@ -37,7 +37,6 @@ class CLI
 
     public function install($frontend, $args, $options)
     {
-         die;
         $conf = Config::current();
         $clone_dir = $conf->download_dir;
         $php_dir = $conf->php_dir;
@@ -65,16 +64,19 @@ class CLI
         $options['optionaldeps'] = false;
 
         $packagexml = $clone_repo_dir. DIRECTORY_SEPARATOR. 'package.xml';
-        //$args['package'] = $packagexml = $clone_repo_dir. DIRECTORY_SEPARATOR. 'package.xml';
-
-        die;
+        //$args['package'] = $packagexml;
         /**
         $packageFile = new PackageFile($packagexml);
         $args['package'] = $packageFile->getPackageFileObject();
         var_dump();
          */
+        $package = new \PEAR2\Pyrus\Package($packagexml);
+        \PEAR2\Pyrus\Installer::begin();
+        \PEAR2\Pyrus\Installer::prepare($package);
+        \PEAR2\Pyrus\Installer::commit();
 
-        $frontend->install($args, $options);
+
+        //$frontend->install($args, $options);
     }
 
     /**
